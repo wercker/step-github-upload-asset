@@ -48,7 +48,7 @@ main() {
     error "File parameter not specified; please add a file parameter to the step";
   fi
 
-  if [ -f "$file" ]; then
+  if [ ! -f "$file" ]; then
     error "The file does not exists; $file";
   fi
 
