@@ -14,6 +14,8 @@ upload_asset() {
     -H "Authorization: token $token" \
     -H "Content-Type: $content_type" \
     --data-binary "@$file";
+
+  return $?
 }
 
 export_id_to_env_var() {
