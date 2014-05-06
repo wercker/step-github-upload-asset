@@ -55,7 +55,7 @@ main() {
 
   # Set variables to defaults if not set by the user
   if [ -z "$name" ]; then
-    # get name from $file
+    name=$(basename "$file")
   fi
 
   if [ -z "$owner" ]; then
@@ -67,7 +67,7 @@ main() {
   fi
 
   if [ -z "$content_type" ]; then
-    content_type=$(file --mime-type -b $file);
+    content_type=$(file --mime-type -b "$file");
     info "no content-type was given, used 'file' to get the content-type: content_type";
   fi
 
