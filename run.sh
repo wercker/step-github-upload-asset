@@ -48,6 +48,8 @@ main() {
     error "File parameter not specified; please add a file parameter to the step";
   fi
 
+  ls -l;
+
   if [ ! -f "$file" ]; then
     error "The file does not exists; $file";
   fi
@@ -80,12 +82,12 @@ main() {
 
   # Upload asset and save the output from curl
   local UPLOAD_RESPONSE=$(upload_asset \
-    "token" \
-    "owner" \
-    "repo" \
-    "name" \
-    "content_type" \
-    "file");
+    "$token" \
+    "$owner" \
+    "$repo" \
+    "$name" \
+    "$content_type" \
+    "$file");
 
   export_id_to_env_var "$UPLOAD_RESPONSE" "$export_id";
 }
