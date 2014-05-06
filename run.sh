@@ -78,11 +78,11 @@ main() {
 
   # Upload asset and save the output from curl
   local UPLOAD_RESPONSE=$(upload_asset \
-    "token"
-    "owner"
-    "repo"
-    "name"
-    "content_type"
+    "token" \
+    "owner" \
+    "repo" \
+    "name" \
+    "content_type" \
     "file");
 
   export_id_to_env_var "$UPLOAD_RESPONSE" "$export_id";
