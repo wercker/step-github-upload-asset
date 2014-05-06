@@ -65,7 +65,7 @@ main() {
 
   if [ -z "$content_type" ]; then
     content_type=$(file --mime-type -b "$file");
-    info "no content-type was given, used 'file' to get the content-type: content_type";
+    info "no content-type was given, used 'file' to get the content-type: $content_type";
   fi
 
   if [ -z "$release_id" ]; then
