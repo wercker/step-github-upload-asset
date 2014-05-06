@@ -76,12 +76,8 @@ main() {
     export_id="WERCKER_GITHUB_UPLOAD_ASSET_ID";
   fi
 
-  # We need jq to parse the result,
-  # but we want to install it before doing anything
-  install_jq;
-
-  # Create the release and save the output from curl
-  local RELEASE_RESPONSE=$(upload_asset \
+  # Upload asset and save the output from curl
+  local UPLOAD_RESPONSE=$(upload_asset \
     "token"
     "owner"
     "repo"
@@ -89,7 +85,7 @@ main() {
     "content_type"
     "file");
 
-  export_id_to_env_var "$RELEASE_RESPONSE" "$export_id";
+  export_id_to_env_var "$UPLOAD_RESPONSE" "$export_id";
 }
 
 # Run the main function
