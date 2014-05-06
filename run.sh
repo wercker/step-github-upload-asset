@@ -7,14 +7,12 @@ upload_asset() {
   local content_type="$5";
   local file="$6";
 
-  curl --fail -X POST https://uploads.github.com/repos/$owner/$repo/releases/$id/assets?name=$name \
-    -A "wercker-create-release" \
+  curl --fail -s -S -X POST https://uploads.github.com/repos/$owner/$repo/releases/$id/assets?name=$name \
+    -A "wercker-upload-asset" \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $token" \
     -H "Content-Type: $content_type" \
-    --data-binary "@$file";
-
-  return $?
+    --data-binary @"$file";
 }
 
 export_id_to_env_var() {
@@ -47,8 +45,6 @@ main() {
   if [ -z "$file" ]; then
     error "File parameter not specified; please add a file parameter to the step";
   fi
-
-  ls -l;
 
   if [ ! -f "$file" ]; then
     error "The file does not exists; $file";
