@@ -8,7 +8,7 @@ upload_asset() {
   local content_type="$5";
   local file="$6";
 
-  curl -f -X POST https://uploads.github.com/repos/$owner/$repo/releases/$id/assets?name=$name \
+  curl --fail -X POST https://uploads.github.com/repos/$owner/$repo/releases/$id/assets?name=$name \
     -A "wercker-create-release" \
     -H "Accept: application/vnd.github.v3+json" \
     -H "Authorization: token $token" \
