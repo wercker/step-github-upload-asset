@@ -6,6 +6,7 @@ upload_asset() {
   local name="$4";
   local content_type="$5";
   local file="$6";
+  local id="$7";
 
   curl --fail -s -S -X POST https://uploads.github.com/repos/$owner/$repo/releases/$id/assets?name=$name \
     -A "wercker-upload-asset" \
@@ -76,6 +77,8 @@ main() {
     export_id="WERCKER_GITHUB_UPLOAD_ASSET_ID";
   fi
 
+  echo "release_id $release_id";
+
   # Upload asset and save the output from curl
   local UPLOAD_RESPONSE=$(upload_asset \
     "$token" \
@@ -83,7 +86,8 @@ main() {
     "$repo" \
     "$name" \
     "$content_type" \
-    "$file");
+    "$file" \
+    "$release_id");
 
   export_id_to_env_var "$UPLOAD_RESPONSE" "$export_id";
 }
