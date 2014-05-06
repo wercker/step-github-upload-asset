@@ -1,3 +1,4 @@
+set -e;
 
 upload_asset() {
   local token="$1";
