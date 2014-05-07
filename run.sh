@@ -100,7 +100,7 @@ main() {
     "$file" \
     "$release_id");
 
-  info "finished upload of asset";
+  info "finished upload of asset $file to GitHub repo $owner/$repo with release $release_id";
 
   export_id_to_env_var "$UPLOAD_RESPONSE" "$export_id";
 
