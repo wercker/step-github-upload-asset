@@ -26,8 +26,6 @@ export_id_to_env_var() {
 }
 
 main() {
-  set -e;
-
   # Assign global variables to local variables
   local token="$WERCKER_GITHUB_UPLOAD_ASSET_TOKEN";
   local file="$WERCKER_GITHUB_UPLOAD_ASSET_FILE";
