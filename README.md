@@ -13,7 +13,7 @@ More information about GitHub releases:
 
 # Example
 
-A minimal example, this will get the token from a environment variable and use the hardcoded `v1.0.0` tag:
+A minimal example, this will get the token from a environment variable, upload a file which is located in the current working directory called `build.tgz` and add it to release `1`:
 
 ``` yaml
 deploy:
