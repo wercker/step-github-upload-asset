@@ -91,7 +91,7 @@ main() {
   info "starting upload of asset $file to GitHub repo $owner/$repo with release $release_id";
 
   # Upload asset and save the output from curl
-  local UPLOAD_RESPONSE=$(upload_asset \
+  UPLOAD_RESPONSE=$(upload_asset \
     "$token" \
     "$owner" \
     "$repo" \
