@@ -38,15 +38,15 @@ main() {
 
   # Validate variables
   if [ -z "$token" ]; then
-    error "Token not specified; please add a token parameter to the step";
+    fail "Token not specified; please add a token parameter to the step";
   fi
 
   if [ -z "$file" ]; then
-    error "File parameter not specified; please add a file parameter to the step";
+    fail "File parameter not specified; please add a file parameter to the step";
   fi
 
   if [ ! -f "$file" ]; then
-    error "The file does not exists; $file";
+    fail "The file does not exists; $file";
   fi
 
   # Set variables to defaults if not set by the user
