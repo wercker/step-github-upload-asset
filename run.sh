@@ -1,5 +1,7 @@
 
 upload_asset() {
+  set -e;
+
   local token="$1";
   local owner="$2";
   local repo="$3";
@@ -17,6 +19,8 @@ upload_asset() {
 }
 
 export_id_to_env_var() {
+  set -e;
+
   local json="$1";
   local export_name="$2";
 
@@ -26,6 +30,8 @@ export_id_to_env_var() {
 }
 
 main() {
+  set -e;
+
   # Assign global variables to local variables
   local token="$WERCKER_GITHUB_UPLOAD_ASSET_TOKEN";
   local file="$WERCKER_GITHUB_UPLOAD_ASSET_FILE";
