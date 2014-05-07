@@ -37,7 +37,7 @@ main() {
   # Assign global variables to local variables
   local token="$WERCKER_GITHUB_UPLOAD_ASSET_TOKEN";
   local file="$WERCKER_GITHUB_UPLOAD_ASSET_FILE";
-  local name="$WERCKER_GITHUB_UPLOAD_ASSET_NAME";
+  local name="$WERCKER_GITHUB_UPLOAD_ASSET_FILENAME";
   local owner="$WERCKER_GITHUB_UPLOAD_ASSET_OWNER";
   local repo="$WERCKER_GITHUB_UPLOAD_ASSET_REPO";
   local content_type="$WERCKER_GITHUB_UPLOAD_ASSET_CONTENT_TYPE";
