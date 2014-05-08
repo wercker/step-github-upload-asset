@@ -1,4 +1,4 @@
-# GitHub create release step
+# GitHub upload asset step
 
 A wercker step for adding an asset to a GitHub release. It has a few parameters, but only two are required: `token` and `file`. See [Creating a GitHub token](#creating-a-github-token).
 
