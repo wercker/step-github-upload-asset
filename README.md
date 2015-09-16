@@ -41,7 +41,7 @@ deploy:
 
 ## file: command not found
 
-This happens when the `file` command cannot be found. We use the `file` command to figure out the content-type of the file that will be uploaded. Either you install `file` on your container, or you specify content-type by using the `content-type` property (see [Options](#user-content-options)).
+This happens when the `file` command cannot be found. We use the `file` command to figure out the content-type of the file that will be uploaded. Either you install `file` on your container, or you specify content-type by using the `content-type` property (see [Options](#options)).
 
 ## curl: (22) The requested URL returned error: 400
 
