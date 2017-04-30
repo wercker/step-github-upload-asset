@@ -24,7 +24,13 @@ export_id_to_env_var() {
   local json="$1";
   local export_name="$2";
 
-  local id=$(echo "$json" | $WERCKER_STEP_ROOT/bin/jq ".id");
+  if [ -f "/etc/alpine-release" ]; then
+    JQ="$WERCKER_STEP_ROOT/bin/jq-alpine"
+  else
+    JQ="$WERCKER_STEP_ROOT/bin/jq"
+  fi
+
+  local id=$(echo "$json" | $JQ ".id");
 
   info "exporting asset id ($id) to environment variable: \$$export_name";
 
