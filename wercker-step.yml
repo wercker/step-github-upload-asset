@@ -1,6 +1,6 @@
 name: github-upload-asset
-version: 1.0.1
-description: wercker step for uploading an asset to a GitHub release
+version: 2.0.0
+description: Wercker step for uploading an asset to a GitHub release
 keywords:
   - GitHub
   - asset
