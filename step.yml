@@ -1,0 +1,33 @@
+name: github-upload-asset
+version: 2.1.0
+summary: Wercker step for uploading an asset to a GitHub release
+tags:
+  - GitHub
+  - asset
+  - upload
+  - release
+properties:
+- name: token
+  type: string
+  required: true
+- name: file
+  type: string
+  required: true
+- name: name
+  type: string
+  required: false
+- name: owner
+  type: string
+  required: false
+- name: repo
+  type: string
+  required: false
+- name: content_type
+  type: string
+  required: false
+- name: release_id
+  type: string
+  required: false
+- name: export_id
+  type: string
+  required: false
