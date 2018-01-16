@@ -1,5 +1,5 @@
 name: github-upload-asset
-version: 2.1.0
+version: 2.1.1
 summary: Wercker step for uploading an asset to a GitHub release
 tags:
   - GitHub
